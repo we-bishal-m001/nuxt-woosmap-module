@@ -21,7 +21,7 @@ Woosmap services packed within a module configuration
 Install the module to your Nuxt application with a single command:
 
 ```bash
-npx nuxi module add @nuxtjs-woosmap
+npx nuxi module add nuxtjs-woosmap
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ Add the module definition to your `nuxt.config` and pass options.
 ```ts
 # Nuxt 3
 export default defineNuxtConfig({
-    modules: ['@nuxtjs-woosmap'],
+    modules: ['nuxtjs-woosmap'],
 
     woosmap: {
       key: `your_woosmap_public_apikey`
