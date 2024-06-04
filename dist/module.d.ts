@@ -1,0 +1,2 @@
+export * from "D:/xampp8117/htdocs/bishal-m001/nuxt-module-woosmap/@nuxtjs-woosmap/src/module";
+export { default } from "D:/xampp8117/htdocs/bishal-m001/nuxt-module-woosmap/@nuxtjs-woosmap/src/module";
