@@ -6,16 +6,16 @@ declare module '#app' {
 }
 
 declare module '@nuxt/schema' {
-  interface NuxtConfig { ['myModule']?: Partial<ModuleOptions> }
-  interface NuxtOptions { ['myModule']?: ModuleOptions }
+  interface NuxtConfig { ['nuxtjsWoosmap']?: Partial<ModuleOptions> }
+  interface NuxtOptions { ['nuxtjsWoosmap']?: ModuleOptions }
   interface NuxtHooks extends ModuleHooks {}
   interface RuntimeConfig extends ModuleRuntimeConfig {}
   interface PublicRuntimeConfig extends ModulePublicRuntimeConfig {}
 }
 
 declare module 'nuxt/schema' {
-  interface NuxtConfig { ['myModule']?: Partial<ModuleOptions> }
-  interface NuxtOptions { ['myModule']?: ModuleOptions }
+  interface NuxtConfig { ['nuxtjsWoosmap']?: Partial<ModuleOptions> }
+  interface NuxtOptions { ['nuxtjsWoosmap']?: ModuleOptions }
   interface NuxtHooks extends ModuleHooks {}
   interface RuntimeConfig extends ModuleRuntimeConfig {}
   interface PublicRuntimeConfig extends ModulePublicRuntimeConfig {}

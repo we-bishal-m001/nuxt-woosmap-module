@@ -1,8 +1,9 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import {defu} from "defu"
+import type { WoosmapBaseConfig } from './runtime/types/woosmap-config.type'
 
 // Module options TypeScript interface definition
-export type ModuleOptions = {}
+export type ModuleOptions = WoosmapBaseConfig
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -10,7 +11,10 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'nuxtjsWoosmap',
   },
   // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: {
+    apiKey: "",
+    baseApiUrl: ""
+  },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
