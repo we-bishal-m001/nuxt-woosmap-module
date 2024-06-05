@@ -1,6 +1,6 @@
 {
-  "name": "my-module",
-  "configKey": "myModule",
+  "name": "nuxtjs-woosmap",
+  "configKey": "nuxtjsWoosmap",
   "version": "1.0.0",
   "builder": {
     "@nuxt/module-builder": "0.7.0",

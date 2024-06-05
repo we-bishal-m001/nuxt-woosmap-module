@@ -1,8 +1,8 @@
 <template>
   <div>
-    Nuxt module playground!
+    Nuxt module testing playground!
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 </script>
