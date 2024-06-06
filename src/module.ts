@@ -16,7 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     apiKey: process.env.WOOSMAP_API_KEY as string,
-    baseApiUrl: process.env.WOOSMAP_BASE_API_URL as string,
+    baseApiUrl: process.env.WOOSMAP_BASE_API_URL as string || "https://api.woosmap.com",
   },
 
   setup(options, nuxt) {
