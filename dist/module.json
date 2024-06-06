@@ -1,6 +1,9 @@
 {
   "name": "nuxtjs-woosmap",
-  "configKey": "nuxtjsWoosmap",
+  "configKey": "woosmap",
+  "compatibility": {
+    "nuxt": "^3.0.0"
+  },
   "version": "1.0.0",
   "builder": {
     "@nuxt/module-builder": "0.7.0",
