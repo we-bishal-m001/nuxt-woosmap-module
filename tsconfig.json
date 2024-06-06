@@ -4,6 +4,8 @@
     "dist",
     "node_modules",
     "playground",
-    "woosmap.map"
-  ]
+  ],
+  "compilerOptions": {
+    "types": ["woosmap.map"]
+  }
 }

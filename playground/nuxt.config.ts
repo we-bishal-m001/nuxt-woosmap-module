@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
-  nuxtjsWoosmap: {},
+  modules: ["nuxtjs-woosmap"],
+  woosmap: {},
   devtools: { enabled: true },
-})
+});
