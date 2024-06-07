@@ -3,7 +3,7 @@
     id="map"
     :data-testid="props.dataTestid"
     ref="mapRef"
-    :class="twMerge('w-full h-[500px]', props.class)"
+    :class="twMerge('h-[500px]', props.class)"
   ></div>
 </template>
 

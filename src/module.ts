@@ -1,6 +1,7 @@
 import {
   defineNuxtModule,
   addPlugin,
+  installModule,
   createResolver,
   addTemplate,
   addImportsDir,
@@ -32,7 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
     onMapLoad: () => {},
   },
 
-  setup(options, nuxt) {
+  async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
     // Public runtimeConfig
@@ -80,6 +81,21 @@ export default defineNuxtModule<ModuleOptions>({
     // Transpile runtime
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     nuxt.options.build.transpile.push(runtimeDir);
+
+    // Tailwind
+    nuxt.options.css.push(
+      resolver.resolve("./runtime/assets/tailwindmainstyles.css")
+    );
+
+    await installModule("@nuxtjs/tailwindcss", {
+      exposeConfig: true,
+      config: {
+        darkMode: "class",
+        content: {
+          files: [resolver.resolve("./runtime/components/**/*.{vue,mjs,ts}")],
+        },
+      },
+    });
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve("./runtime/plugin"));

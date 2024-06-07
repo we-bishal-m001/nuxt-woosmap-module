@@ -6,7 +6,7 @@
       <input name="search" v-model="query" @input="testSearch" autofocus />
     </div>
     <br />
-    <Woosmap />
+    <Woosmap class="mt-10" />
     <br />
     <pre>
       {{ response }}
