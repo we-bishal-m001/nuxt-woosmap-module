@@ -62,7 +62,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.app.head.script?.push(startupScript);
 
-    /* expose types */
+    /* TODO- expose types */
     const template = addTemplate({
       filename: "types/index.d.ts",
       getContents: () => [``].join("\n"),
