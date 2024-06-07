@@ -2,8 +2,9 @@ import {
   defineNuxtModule,
   addPlugin,
   createResolver,
-  addTypeTemplate,
-  addTemplate
+  addTemplate,
+  addImportsDir,
+  addComponentsDir,
 } from "@nuxt/kit";
 import { defu } from "defu";
 import type { WoosmapBaseConfig } from "./runtime/types";
@@ -59,27 +60,18 @@ export default defineNuxtModule<ModuleOptions>({
     /* expose types */
     const template = addTemplate({
       filename: "types/index.d.ts",
-      getContents: () => `
-        import { z } from "zod";
-
-        const ConfigSchema = z.object({
-          apiKey: z.string().min(12, "too short"),
-          baseApiUrl: z.string().url("not a url"),
-          fullScreenMap: z.boolean().optional()
-        });
-
-        export type WoosmapBaseConfig = z.infer<typeof ConfigSchema>;
-
-        declare module "nuxtjs-woosmap" {
-          interface PublicRuntimeConfig {
-            woosmap: WoosmapBaseConfig;
-          }
-        }`,
+      getContents: () => [``].join("\n"),
     });
 
-    nuxt.hook('prepare:types', ({ references }) => {
-      references.push({ path: template.dst })
-    })
+    nuxt.hook("prepare:types", ({ references }) => {
+      references.push({ path: template.dst });
+    });
+
+    // Composables auto-import
+    addImportsDir(resolver.resolve("runtime/composables"));
+
+    // Components auto-import
+    addComponentsDir({ path: resolver.resolve("runtime/components") });
 
     // Transpile runtime
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
