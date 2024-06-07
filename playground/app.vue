@@ -6,9 +6,11 @@
       <input name="search" v-model="query" @input="testSearch" autofocus />
     </div>
     <br />
-    <pre>
+    <Woosmap class="mt-20" :markers="testmarkers" />
+    <br />
+    <!-- <pre>
       {{ response }}
-    </pre>
+    </pre> -->
   </div>
 </template>
 
@@ -18,10 +20,26 @@ const config = useRuntimeConfig();
 
 const { $woosmap } = useNuxtApp();
 
+const map = useWoosmap()
+
+type Marker = {
+  lat: number;
+  lng: number;
+  content?: string;
+  label?: string;
+  iconUrl?: string;
+};
+
+const testmarkers = ref<Marker[]>([{
+  lat : 49.672977959837084,
+  lng : -1.7378289111886716,
+  content: `hello`,
+  label: "1",
+  iconUrl: "https://images.woosmap.com/icons/pin-blue.png"
+}])
+
 const response = ref<any>();
-
 const query = ref<string>("");
-
 async function testSearch() {
   try {
     response.value = await ($woosmap as any).getLocalitySuggestions(
