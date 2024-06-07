@@ -6,6 +6,8 @@
       <input name="search" v-model="query" @input="testSearch" autofocus />
     </div>
     <br />
+    <Woosmap />
+    <br />
     <pre>
       {{ response }}
     </pre>
@@ -17,6 +19,8 @@ const config = useRuntimeConfig();
 // console.log(config.public.woosmap);
 
 const { $woosmap } = useNuxtApp();
+
+const map = useWoosmap()
 
 const response = ref<any>();
 

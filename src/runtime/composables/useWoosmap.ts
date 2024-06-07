@@ -5,5 +5,5 @@ export const useWoosmap = () => {
 
   const { woosmap: runtimeConfig } = useRuntimeConfig().public
 
-  return nuxtApp.$woosmap
+  return runtimeConfig
 }

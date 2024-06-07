@@ -26,6 +26,10 @@ export default defineNuxtModule<ModuleOptions>({
     apiKey: process.env.WOOSMAP_API_KEY as string,
     baseApiUrl:
       (process.env.WOOSMAP_BASE_API_URL as string) || "https://api.woosmap.com",
+    isLoaded: false,
+    fullScreenMap: false,
+    radiusOfSearch: undefined,
+    onMapLoad: () => {},
   },
 
   setup(options, nuxt) {
@@ -48,7 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     const startupScript = {
       hid: "woosmap",
-      src: `https://sdk.woosmap.com/map/map.js?key=${woosmapApiKey}&callback=loadMap`,
+      src: `https://sdk.woosmap.com/map/map.js?key=${woosmapApiKey}&callback=onMapLoad`,
       defer: true,
       onerror(e: Event) {
         console.error("Failed to load woosmap sdk", e);

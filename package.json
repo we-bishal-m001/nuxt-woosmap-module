@@ -43,6 +43,7 @@
     "changelogen": "^0.5.5",
     "eslint": "^9.4.0",
     "nuxt": "^3.11.2",
+    "tailwind-merge": "^2.3.0",
     "typescript": "latest",
     "vitest": "^1.6.0",
     "vue-tsc": "^2.0.19",
