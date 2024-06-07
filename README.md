@@ -8,7 +8,7 @@ Woosmap services packed within a module configuration
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- [📖 &nbsp;Documentation](https://developers.woosmap.com/api-reference/)
 
 ## Features
 
@@ -39,8 +39,18 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You can now use nuxt-woosmap in your Nuxt app ✨
+`Key` and `baseApiUrl` can also be provided in the environment configuration as;
 
+```ts
+WOOSMAP_API_KEY=woos-5222f84d-xxxx-xxxx-xxxxxxxxx
+```
+
+That's it! You can now use woosmap services in your Nuxt app ✨
+
+## List of services and usage
+
+- (localities autocomplete api)[https://developers.woosmap.com/products/localities/autocomplete/] 
+- (localities details api)[https://developers.woosmap.com/products/localities/details/] 
 
 ## Contribution
 
